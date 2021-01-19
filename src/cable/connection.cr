@@ -105,13 +105,13 @@ module Cable
 
     def subscribe(payload)
       channel = Cable::Channel::CHANNELS[payload.channel].new(
-        connection: self, 
+        connection: self,
         identifier: payload.identifier,
         params: payload.channel_params
       )
       Connection::CHANNELS[connection_identifier] ||= {} of String => Cable::Channel
       Connection::CHANNELS[connection_identifier][payload.identifier] = channel
-      # Cable.server.subscribe_channel(channel: channel, identifier: payload.identifier)
+      Cable.server.subscribe_channel(channel: channel, identifier: payload.identifier)
       channel.subscribed
       Cable::Logger.info "#{payload.channel} is transmitting the subscription confirmation"
       socket.send({type: "confirm_subscription", identifier: payload.identifier}.to_json)
