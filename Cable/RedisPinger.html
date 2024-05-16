@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="cable">
-  <title>Cable::Handler(T) - cable 0.3.1</title>
+  <title>Cable::RedisPinger - cable 0.3.1</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -111,7 +111,7 @@
       
     </li>
   
-  <li class=" current" data-id="cable/Cable/Handler" data-name="cable::handler(t)">
+  <li class=" " data-id="cable/Cable/Handler" data-name="cable::handler(t)">
       <a href="../Cable/Handler.html">Handler</a>
       
     </li>
@@ -151,7 +151,7 @@
       
     </li>
   
-  <li class=" " data-id="cable/Cable/RedisPinger" data-name="cable::redispinger">
+  <li class=" current" data-id="cable/Cable/RedisPinger" data-name="cable::redispinger">
       <a href="../Cable/RedisPinger.html">RedisPinger</a>
       
     </li>
@@ -185,12 +185,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Cable::Handler(T)
+  <span class="kind">class</span> Cable::RedisPinger
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Cable/Handler.html">Cable::Handler(T)</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Cable/RedisPinger.html">Cable::RedisPinger</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -198,20 +198,6 @@
 
 
 
-
-  <h2>
-    <a id="included-modules" class="anchor" href="#included-modules">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Included Modules
-  </h2>
-  <ul class="other-types-list">
-    
-      <li class="other-type">HTTP::Handler</li>
-    
-  </ul>
 
 
 
@@ -232,7 +218,7 @@
   </h2>
   
     
-      cable/handler.cr
+      cable/redis_pinger.cr
     
     <br/>
   
@@ -240,6 +226,23 @@
 
 
 
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28server%3ACable%3A%3AServer%29-class-method" class="signature"><strong>.new</strong>(server : Cable::Server)</a>
+        
+      </li>
+    
+  </ul>
 
 
 
@@ -256,7 +259,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#call%28context%29-instance-method" class="signature"><strong>#call</strong>(context)</a>
+        <a href="#stop-instance-method" class="signature"><strong>#stop</strong></a>
         
       </li>
     
@@ -288,18 +291,32 @@
 
 
   
-    
-
-
-    
-
-
-    
-
-
-  
 </div>
 
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(server:Cable::Server)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(server : <a href="../Cable/Server.html">Cable::Server</a>)
+
+        <a class="method-permalink" href="#new%28server%3ACable%3A%3AServer%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
 
 
 
@@ -314,12 +331,12 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="call(context)-instance-method">
+    <div class="entry-detail" id="stop-instance-method">
       <div class="signature">
         
-        def <strong>call</strong>(context)
+        def <strong>stop</strong>
 
-        <a class="method-permalink" href="#call%28context%29-instance-method">#</a>
+        <a class="method-permalink" href="#stop-instance-method">#</a>
       </div>
       
       <br/>

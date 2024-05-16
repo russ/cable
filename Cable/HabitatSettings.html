@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.1.1">
-<meta name="crystal_docs.project_version" content="master">
+<meta name="generator" content="Crystal Docs 1.6.2">
+<meta name="crystal_docs.project_version" content="0.3.1">
 <meta name="crystal_docs.project_name" content="cable">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="cable">
-  <title>Cable::HabitatSettings - cable master</title>
+  <title>Cable::HabitatSettings - cable 0.3.1</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        master
+        0.3.1
       </span>
     </div>
   </div>
@@ -55,6 +55,11 @@
       <a href="../Cable.html">Cable</a>
       
         <ul>
+  
+  <li class=" " data-id="cable/Cable/BackendCore" data-name="cable::backendcore">
+      <a href="../Cable/BackendCore.html">BackendCore</a>
+      
+    </li>
   
   <li class="parent " data-id="cable/Cable/Channel" data-name="cable::channel">
       <a href="../Cable/Channel.html">Channel</a>
@@ -81,8 +86,8 @@
       
         <ul>
   
-  <li class=" " data-id="cable/Cable/Connection/UnathorizedConnectionException" data-name="cable::connection::unathorizedconnectionexception">
-      <a href="../Cable/Connection/UnathorizedConnectionException.html">UnathorizedConnectionException</a>
+  <li class=" " data-id="cable/Cable/Connection/UnauthorizedConnectionException" data-name="cable::connection::unauthorizedconnectionexception">
+      <a href="../Cable/Connection/UnauthorizedConnectionException.html">UnauthorizedConnectionException</a>
       
     </li>
   
@@ -93,6 +98,11 @@
   
   <li class=" " data-id="cable/Cable/Debug" data-name="cable::debug">
       <a href="../Cable/Debug.html">Debug</a>
+      
+    </li>
+  
+  <li class=" " data-id="cable/Cable/DevBackend" data-name="cable::devbackend">
+      <a href="../Cable/DevBackend.html">DevBackend</a>
       
     </li>
   
@@ -111,6 +121,16 @@
       
         <ul>
   
+  <li class=" " data-id="cable/Cable/Payload/IdentifierConverter" data-name="cable::payload::identifierconverter">
+      <a href="../Cable/Payload/IdentifierConverter.html">IdentifierConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="cable/Cable/Payload/Indentifier" data-name="cable::payload::indentifier">
+      <a href="../Cable/Payload/Indentifier.html">Indentifier</a>
+      
+    </li>
+  
   <li class=" " data-id="cable/Cable/Payload/PARAMS" data-name="cable::payload::params">
       <a href="../Cable/Payload/PARAMS.html">PARAMS</a>
       
@@ -126,33 +146,33 @@
       
     </li>
   
+  <li class=" " data-id="cable/Cable/RedisBackend" data-name="cable::redisbackend">
+      <a href="../Cable/RedisBackend.html">RedisBackend</a>
+      
+    </li>
+  
+  <li class=" " data-id="cable/Cable/RedisPinger" data-name="cable::redispinger">
+      <a href="../Cable/RedisPinger.html">RedisPinger</a>
+      
+    </li>
+  
+  <li class=" " data-id="cable/Cable/RemoteConnections" data-name="cable::remoteconnections">
+      <a href="../Cable/RemoteConnections.html">RemoteConnections</a>
+      
+    </li>
+  
   <li class=" " data-id="cable/Cable/Server" data-name="cable::server">
       <a href="../Cable/Server.html">Server</a>
       
     </li>
   
-  <li class="parent " data-id="cable/Cable/WebsocketPinger" data-name="cable::websocketpinger">
+  <li class=" " data-id="cable/Cable/WebsocketPinger" data-name="cable::websocketpinger">
       <a href="../Cable/WebsocketPinger.html">WebsocketPinger</a>
       
-        <ul>
-  
-  <li class=" " data-id="cable/Cable/WebsocketPinger/PingStoppedException" data-name="cable::websocketpinger::pingstoppedexception">
-      <a href="../Cable/WebsocketPinger/PingStoppedException.html">PingStoppedException</a>
-      
     </li>
   
 </ul>
 
-      
-    </li>
-  
-</ul>
-
-      
-    </li>
-  
-  <li class=" " data-id="cable/Redis" data-name="redis">
-      <a href="../Redis.html">Redis</a>
       
     </li>
   
@@ -198,9 +218,7 @@
   </h2>
   
     
-      <a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable.cr#L28" target="_blank">
-        cable.cr
-      </a>
+      cable.cr
     
     <br/>
   
@@ -222,6 +240,23 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
+        <a href="#backend_class%3ACable%3A%3ABackendCore.class-class-method" class="signature"><strong>.backend_class</strong> : <span class="t">Cable</span><span class="t">::</span><span class="t">BackendCore</span>.<span class="k">class</span></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#backend_class%3D%28value%3ACable%3A%3ABackendCore.class%29-class-method" class="signature"><strong>.backend_class=</strong>(value : <span class="t">Cable</span><span class="t">::</span><span class="t">BackendCore</span>.<span class="k">class</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#backend_class%3F-class-method" class="signature"><strong>.backend_class?</strong></a>
+        
+          <div class="summary"><p>Used for checking missing settings on non-nilable types It's advised to use backend_class in your apps to ensure the propper type is checked.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#disable_sec_websocket_protocol_header%3ABool-class-method" class="signature"><strong>.disable_sec_websocket_protocol_header</strong> : Bool</a>
         
       </li>
@@ -235,6 +270,108 @@
         <a href="#disable_sec_websocket_protocol_header%3F-class-method" class="signature"><strong>.disable_sec_websocket_protocol_header?</strong></a>
         
           <div class="summary"><p>Used for checking missing settings on non-nilable types It's advised to use disable_sec_websocket_protocol_header in your apps to ensure the propper type is checked.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_error%3AProc%28Exception%2CString%2CNil%29-class-method" class="signature"><strong>.on_error</strong> : Proc(Exception, String, Nil)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_error%3D%28value%3AProc%28Exception%2CString%2CNil%29%29-class-method" class="signature"><strong>.on_error=</strong>(value : Proc(Exception, String, Nil))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_error%3F-class-method" class="signature"><strong>.on_error?</strong></a>
+        
+          <div class="summary"><p>Used for checking missing settings on non-nilable types It's advised to use on_error in your apps to ensure the propper type is checked.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pool_redis_publish%3ABool-class-method" class="signature"><strong>.pool_redis_publish</strong> : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pool_redis_publish%3D%28value%3ABool%29-class-method" class="signature"><strong>.pool_redis_publish=</strong>(value : Bool)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pool_redis_publish%3F-class-method" class="signature"><strong>.pool_redis_publish?</strong></a>
+        
+          <div class="summary"><p>Used for checking missing settings on non-nilable types It's advised to use pool_redis_publish in your apps to ensure the propper type is checked.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#redis_ping_interval%3ATime%3A%3ASpan-class-method" class="signature"><strong>.redis_ping_interval</strong> : Time::Span</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#redis_ping_interval%3D%28value%3ATime%3A%3ASpan%29-class-method" class="signature"><strong>.redis_ping_interval=</strong>(value : Time::Span)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#redis_ping_interval%3F-class-method" class="signature"><strong>.redis_ping_interval?</strong></a>
+        
+          <div class="summary"><p>Used for checking missing settings on non-nilable types It's advised to use redis_ping_interval in your apps to ensure the propper type is checked.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#redis_pool_size%3AInt32-class-method" class="signature"><strong>.redis_pool_size</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#redis_pool_size%3D%28value%3AInt32%29-class-method" class="signature"><strong>.redis_pool_size=</strong>(value : Int32)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#redis_pool_size%3F-class-method" class="signature"><strong>.redis_pool_size?</strong></a>
+        
+          <div class="summary"><p>Used for checking missing settings on non-nilable types It's advised to use redis_pool_size in your apps to ensure the propper type is checked.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#redis_pool_timeout%3AFloat64-class-method" class="signature"><strong>.redis_pool_timeout</strong> : Float64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#redis_pool_timeout%3D%28value%3AFloat64%29-class-method" class="signature"><strong>.redis_pool_timeout=</strong>(value : Float64)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#redis_pool_timeout%3F-class-method" class="signature"><strong>.redis_pool_timeout?</strong></a>
+        
+          <div class="summary"><p>Used for checking missing settings on non-nilable types It's advised to use redis_pool_timeout in your apps to ensure the propper type is checked.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#restart_error_allowance%3AInt32-class-method" class="signature"><strong>.restart_error_allowance</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#restart_error_allowance%3D%28value%3AInt32%29-class-method" class="signature"><strong>.restart_error_allowance=</strong>(value : Int32)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#restart_error_allowance%3F-class-method" class="signature"><strong>.restart_error_allowance?</strong></a>
+        
+          <div class="summary"><p>Used for checking missing settings on non-nilable types It's advised to use restart_error_allowance in your apps to ensure the propper type is checked.</p></div>
         
       </li>
     
@@ -340,6 +477,55 @@
     Class Method Detail
   </h2>
   
+    <div class="entry-detail" id="backend_class:Cable::BackendCore.class-class-method">
+      <div class="signature">
+        
+        def self.<strong>backend_class</strong> : <span class="t">Cable</span><span class="t">::</span><span class="t">BackendCore</span>.<span class="k">class</span>
+
+        <a class="method-permalink" href="#backend_class%3ACable%3A%3ABackendCore.class-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="backend_class=(value:Cable::BackendCore.class)-class-method">
+      <div class="signature">
+        
+        def self.<strong>backend_class=</strong>(value : <span class="t">Cable</span><span class="t">::</span><span class="t">BackendCore</span>.<span class="k">class</span>)
+
+        <a class="method-permalink" href="#backend_class%3D%28value%3ACable%3A%3ABackendCore.class%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="backend_class?-class-method">
+      <div class="signature">
+        
+        def self.<strong>backend_class?</strong>
+
+        <a class="method-permalink" href="#backend_class%3F-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Used for checking missing settings on non-nilable types
+It's advised to use backend_class in your apps to ensure
+the propper type is checked.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="disable_sec_websocket_protocol_header:Bool-class-method">
       <div class="signature">
         
@@ -380,6 +566,300 @@
           
           <p>Used for checking missing settings on non-nilable types
 It's advised to use disable_sec_websocket_protocol_header in your apps to ensure
+the propper type is checked.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_error:Proc(Exception,String,Nil)-class-method">
+      <div class="signature">
+        
+        def self.<strong>on_error</strong> : Proc(Exception, String, Nil)
+
+        <a class="method-permalink" href="#on_error%3AProc%28Exception%2CString%2CNil%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_error=(value:Proc(Exception,String,Nil))-class-method">
+      <div class="signature">
+        
+        def self.<strong>on_error=</strong>(value : Proc(Exception, String, Nil))
+
+        <a class="method-permalink" href="#on_error%3D%28value%3AProc%28Exception%2CString%2CNil%29%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_error?-class-method">
+      <div class="signature">
+        
+        def self.<strong>on_error?</strong>
+
+        <a class="method-permalink" href="#on_error%3F-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Used for checking missing settings on non-nilable types
+It's advised to use on_error in your apps to ensure
+the propper type is checked.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pool_redis_publish:Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>pool_redis_publish</strong> : Bool
+
+        <a class="method-permalink" href="#pool_redis_publish%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pool_redis_publish=(value:Bool)-class-method">
+      <div class="signature">
+        
+        def self.<strong>pool_redis_publish=</strong>(value : Bool)
+
+        <a class="method-permalink" href="#pool_redis_publish%3D%28value%3ABool%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pool_redis_publish?-class-method">
+      <div class="signature">
+        
+        def self.<strong>pool_redis_publish?</strong>
+
+        <a class="method-permalink" href="#pool_redis_publish%3F-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Used for checking missing settings on non-nilable types
+It's advised to use pool_redis_publish in your apps to ensure
+the propper type is checked.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="redis_ping_interval:Time::Span-class-method">
+      <div class="signature">
+        
+        def self.<strong>redis_ping_interval</strong> : Time::Span
+
+        <a class="method-permalink" href="#redis_ping_interval%3ATime%3A%3ASpan-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="redis_ping_interval=(value:Time::Span)-class-method">
+      <div class="signature">
+        
+        def self.<strong>redis_ping_interval=</strong>(value : Time::Span)
+
+        <a class="method-permalink" href="#redis_ping_interval%3D%28value%3ATime%3A%3ASpan%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="redis_ping_interval?-class-method">
+      <div class="signature">
+        
+        def self.<strong>redis_ping_interval?</strong>
+
+        <a class="method-permalink" href="#redis_ping_interval%3F-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Used for checking missing settings on non-nilable types
+It's advised to use redis_ping_interval in your apps to ensure
+the propper type is checked.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="redis_pool_size:Int32-class-method">
+      <div class="signature">
+        
+        def self.<strong>redis_pool_size</strong> : Int32
+
+        <a class="method-permalink" href="#redis_pool_size%3AInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="redis_pool_size=(value:Int32)-class-method">
+      <div class="signature">
+        
+        def self.<strong>redis_pool_size=</strong>(value : Int32)
+
+        <a class="method-permalink" href="#redis_pool_size%3D%28value%3AInt32%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="redis_pool_size?-class-method">
+      <div class="signature">
+        
+        def self.<strong>redis_pool_size?</strong>
+
+        <a class="method-permalink" href="#redis_pool_size%3F-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Used for checking missing settings on non-nilable types
+It's advised to use redis_pool_size in your apps to ensure
+the propper type is checked.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="redis_pool_timeout:Float64-class-method">
+      <div class="signature">
+        
+        def self.<strong>redis_pool_timeout</strong> : Float64
+
+        <a class="method-permalink" href="#redis_pool_timeout%3AFloat64-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="redis_pool_timeout=(value:Float64)-class-method">
+      <div class="signature">
+        
+        def self.<strong>redis_pool_timeout=</strong>(value : Float64)
+
+        <a class="method-permalink" href="#redis_pool_timeout%3D%28value%3AFloat64%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="redis_pool_timeout?-class-method">
+      <div class="signature">
+        
+        def self.<strong>redis_pool_timeout?</strong>
+
+        <a class="method-permalink" href="#redis_pool_timeout%3F-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Used for checking missing settings on non-nilable types
+It's advised to use redis_pool_timeout in your apps to ensure
+the propper type is checked.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="restart_error_allowance:Int32-class-method">
+      <div class="signature">
+        
+        def self.<strong>restart_error_allowance</strong> : Int32
+
+        <a class="method-permalink" href="#restart_error_allowance%3AInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="restart_error_allowance=(value:Int32)-class-method">
+      <div class="signature">
+        
+        def self.<strong>restart_error_allowance=</strong>(value : Int32)
+
+        <a class="method-permalink" href="#restart_error_allowance%3D%28value%3AInt32%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="restart_error_allowance?-class-method">
+      <div class="signature">
+        
+        def self.<strong>restart_error_allowance?</strong>
+
+        <a class="method-permalink" href="#restart_error_allowance%3F-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Used for checking missing settings on non-nilable types
+It's advised to use restart_error_allowance in your apps to ensure
 the propper type is checked.</p>
         </div>
       

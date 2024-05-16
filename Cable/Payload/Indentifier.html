@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="cable">
-  <title>Cable::Channel::CloseRedisFiber - cable 0.3.1</title>
+  <title>Cable::Payload::Indentifier - cable 0.3.1</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -61,12 +61,12 @@
       
     </li>
   
-  <li class="parent open current" data-id="cable/Cable/Channel" data-name="cable::channel">
+  <li class="parent " data-id="cable/Cable/Channel" data-name="cable::channel">
       <a href="../../Cable/Channel.html">Channel</a>
       
         <ul>
   
-  <li class=" current" data-id="cable/Cable/Channel/CloseRedisFiber" data-name="cable::channel::closeredisfiber">
+  <li class=" " data-id="cable/Cable/Channel/CloseRedisFiber" data-name="cable::channel::closeredisfiber">
       <a href="../../Cable/Channel/CloseRedisFiber.html">CloseRedisFiber</a>
       
     </li>
@@ -116,7 +116,7 @@
       
     </li>
   
-  <li class="parent " data-id="cable/Cable/Payload" data-name="cable::payload">
+  <li class="parent open current" data-id="cable/Cable/Payload" data-name="cable::payload">
       <a href="../../Cable/Payload.html">Payload</a>
       
         <ul>
@@ -126,7 +126,7 @@
       
     </li>
   
-  <li class=" " data-id="cable/Cable/Payload/Indentifier" data-name="cable::payload::indentifier">
+  <li class=" current" data-id="cable/Cable/Payload/Indentifier" data-name="cable::payload::indentifier">
       <a href="../../Cable/Payload/Indentifier.html">Indentifier</a>
       
     </li>
@@ -185,12 +185,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Cable::Channel::CloseRedisFiber
+  <span class="kind">struct</span> Cable::Payload::Indentifier
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Cable/Channel/CloseRedisFiber.html">Cable::Channel::CloseRedisFiber</a></li><li class="superclass">Exception</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Cable/Payload/Indentifier.html">Cable::Payload::Indentifier</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
 
 
 
@@ -198,6 +198,22 @@
 
 
 
+
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type">JSON::Serializable</li>
+    
+      <li class="other-type">JSON::Serializable::Unmapped</li>
+    
+  </ul>
 
 
 
@@ -218,7 +234,7 @@
   </h2>
   
     
-      cable/channel.cr
+      cable/payload.cr
     
     <br/>
   
@@ -227,9 +243,58 @@
 
 
 
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        
+      </li>
+    
+  </ul>
 
 
 
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#channel%3AString-instance-method" class="signature"><strong>#channel</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#channel%3D%28channel%3AString%29-instance-method" class="signature"><strong>#channel=</strong>(channel : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#key%3AString-instance-method" class="signature"><strong>#key</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#key%3D%28key%3AString%29-instance-method" class="signature"><strong>#key=</strong>(key : String)</a>
+        
+      </li>
+    
+  </ul>
 
 
 
@@ -267,12 +332,122 @@
 
 
   
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
 </div>
 
 
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(pull : JSON::PullParser)
+
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
 
 
 
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="channel:String-instance-method">
+      <div class="signature">
+        
+        def <strong>channel</strong> : String
+
+        <a class="method-permalink" href="#channel%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="channel=(channel:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>channel=</strong>(channel : String)
+
+        <a class="method-permalink" href="#channel%3D%28channel%3AString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="key:String-instance-method">
+      <div class="signature">
+        
+        def <strong>key</strong> : String
+
+        <a class="method-permalink" href="#key%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="key=(key:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>key=</strong>(key : String)
+
+        <a class="method-permalink" href="#key%3D%28key%3AString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
 
 
 

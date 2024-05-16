@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.1.1">
-<meta name="crystal_docs.project_version" content="master">
+<meta name="generator" content="Crystal Docs 1.6.2">
+<meta name="crystal_docs.project_version" content="0.3.1">
 <meta name="crystal_docs.project_name" content="cable">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="cable">
-  <title>Cable::Connection - cable master</title>
+  <title>Cable::Connection - cable 0.3.1</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        master
+        0.3.1
       </span>
     </div>
   </div>
@@ -55,6 +55,11 @@
       <a href="../Cable.html">Cable</a>
       
         <ul>
+  
+  <li class=" " data-id="cable/Cable/BackendCore" data-name="cable::backendcore">
+      <a href="../Cable/BackendCore.html">BackendCore</a>
+      
+    </li>
   
   <li class="parent " data-id="cable/Cable/Channel" data-name="cable::channel">
       <a href="../Cable/Channel.html">Channel</a>
@@ -81,8 +86,8 @@
       
         <ul>
   
-  <li class=" " data-id="cable/Cable/Connection/UnathorizedConnectionException" data-name="cable::connection::unathorizedconnectionexception">
-      <a href="../Cable/Connection/UnathorizedConnectionException.html">UnathorizedConnectionException</a>
+  <li class=" " data-id="cable/Cable/Connection/UnauthorizedConnectionException" data-name="cable::connection::unauthorizedconnectionexception">
+      <a href="../Cable/Connection/UnauthorizedConnectionException.html">UnauthorizedConnectionException</a>
       
     </li>
   
@@ -93,6 +98,11 @@
   
   <li class=" " data-id="cable/Cable/Debug" data-name="cable::debug">
       <a href="../Cable/Debug.html">Debug</a>
+      
+    </li>
+  
+  <li class=" " data-id="cable/Cable/DevBackend" data-name="cable::devbackend">
+      <a href="../Cable/DevBackend.html">DevBackend</a>
       
     </li>
   
@@ -111,6 +121,16 @@
       
         <ul>
   
+  <li class=" " data-id="cable/Cable/Payload/IdentifierConverter" data-name="cable::payload::identifierconverter">
+      <a href="../Cable/Payload/IdentifierConverter.html">IdentifierConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="cable/Cable/Payload/Indentifier" data-name="cable::payload::indentifier">
+      <a href="../Cable/Payload/Indentifier.html">Indentifier</a>
+      
+    </li>
+  
   <li class=" " data-id="cable/Cable/Payload/PARAMS" data-name="cable::payload::params">
       <a href="../Cable/Payload/PARAMS.html">PARAMS</a>
       
@@ -126,33 +146,33 @@
       
     </li>
   
+  <li class=" " data-id="cable/Cable/RedisBackend" data-name="cable::redisbackend">
+      <a href="../Cable/RedisBackend.html">RedisBackend</a>
+      
+    </li>
+  
+  <li class=" " data-id="cable/Cable/RedisPinger" data-name="cable::redispinger">
+      <a href="../Cable/RedisPinger.html">RedisPinger</a>
+      
+    </li>
+  
+  <li class=" " data-id="cable/Cable/RemoteConnections" data-name="cable::remoteconnections">
+      <a href="../Cable/RemoteConnections.html">RemoteConnections</a>
+      
+    </li>
+  
   <li class=" " data-id="cable/Cable/Server" data-name="cable::server">
       <a href="../Cable/Server.html">Server</a>
       
     </li>
   
-  <li class="parent " data-id="cable/Cable/WebsocketPinger" data-name="cable::websocketpinger">
+  <li class=" " data-id="cable/Cable/WebsocketPinger" data-name="cable::websocketpinger">
       <a href="../Cable/WebsocketPinger.html">WebsocketPinger</a>
       
-        <ul>
-  
-  <li class=" " data-id="cable/Cable/WebsocketPinger/PingStoppedException" data-name="cable::websocketpinger::pingstoppedexception">
-      <a href="../Cable/WebsocketPinger/PingStoppedException.html">PingStoppedException</a>
-      
     </li>
   
 </ul>
 
-      
-    </li>
-  
-</ul>
-
-      
-    </li>
-  
-  <li class=" " data-id="cable/Redis" data-name="redis">
-      <a href="../Redis.html">Redis</a>
       
     </li>
   
@@ -198,9 +218,7 @@
   </h2>
   
     
-      <a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/connection.cr#L4" target="_blank">
-        cable/connection.cr
-      </a>
+      cable/connection.cr
     
     <br/>
   
@@ -220,7 +238,7 @@
   <dl>
     
       <dt class="entry-const" id="CHANNELS">
-        <strong>CHANNELS</strong> = <code>{} <span class="k">of</span> <span class="t">String</span> => <span class="t">Hash</span>(<span class="t">String</span>, <span class="t">Cable</span><span class="t">::</span><span class="t">Channel</span>)</code>
+        <strong>CHANNELS</strong> = <code>{} <span class="k">of</span> <span class="t">String</span> <span class="o">=&gt;</span> <span class="t">Hash</span>(<span class="t">String</span>, <span class="t">Cable</span><span class="t">::</span><span class="t">Channel</span>)</code>
       </dt>
       
     
@@ -277,7 +295,17 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
+        <a href="#channels%3AArray%28Cable%3A%3AChannel%29-instance-method" class="signature"><strong>#channels</strong> : Array(Cable::Channel)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#close-instance-method" class="signature"><strong>#close</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#closed%3F%3ABool-instance-method" class="signature"><strong>#closed?</strong> : Bool</a>
         
       </li>
     
@@ -309,11 +337,6 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#id%3AUUID-instance-method" class="signature"><strong>#id</strong> : UUID</a>
-        
-      </li>
-    
-      <li class="entry-summary">
         <a href="#identifier-instance-method" class="signature"><strong>#identifier</strong></a>
         
       </li>
@@ -334,7 +357,9 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#receive%28message%29-instance-method" class="signature"><strong>#receive</strong>(message)</a>
+        <a href="#receive%28message%3AString%29-instance-method" class="signature"><strong>#receive</strong>(message : String)</a>
+        
+          <div class="summary"><p>Convert the <code><a href="../Cable/Connection.html#message%28payload%3ACable%3A%3APayload%29-instance-method">#message</a></code> to a proper <code><a href="../Cable/Payload.html">Payload</a></code>.</p></div>
         
       </li>
     
@@ -344,12 +369,12 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#reject_connection%21-instance-method" class="signature"><strong>#reject_connection!</strong></a>
+        <a href="#reject_unauthorized_connection-instance-method" class="signature"><strong>#reject_unauthorized_connection</strong></a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#reject_unauthorized_connection-instance-method" class="signature"><strong>#reject_unauthorized_connection</strong></a>
+        <a href="#send_message%28message%3AString%29-instance-method" class="signature"><strong>#send_message</strong>(message : String)</a>
         
       </li>
     
@@ -369,7 +394,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#token%3AString%3F-instance-method" class="signature"><strong>#token</strong> : String?</a>
+        <a href="#token%3AString%7CNil-instance-method" class="signature"><strong>#token</strong> : String | Nil</a>
         
       </li>
     
@@ -451,8 +476,6 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/connection.cr#L34" target="_blank">View source</a>]
-        
       </div>
     </div>
   
@@ -479,8 +502,6 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/connection.cr#L149" target="_blank">View source</a>]
-        
       </div>
     </div>
   
@@ -496,6 +517,20 @@
     Instance Method Detail
   </h2>
   
+    <div class="entry-detail" id="channels:Array(Cable::Channel)-instance-method">
+      <div class="signature">
+        
+        def <strong>channels</strong> : Array(<a href="../Cable/Channel.html">Cable::Channel</a>)
+
+        <a class="method-permalink" href="#channels%3AArray%28Cable%3A%3AChannel%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="close-instance-method">
       <div class="signature">
         
@@ -507,7 +542,19 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/connection.cr#L55" target="_blank">View source</a>]
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="closed?:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>closed?</strong> : Bool
+
+        <a class="method-permalink" href="#closed%3F%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
         
       </div>
     </div>
@@ -523,8 +570,6 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/connection.cr#L49" target="_blank">View source</a>]
-        
       </div>
     </div>
   
@@ -538,8 +583,6 @@
       
       <br/>
       <div>
-        
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/connection.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -555,8 +598,6 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/connection.cr#L8" target="_blank">View source</a>]
-        
       </div>
     </div>
   
@@ -570,8 +611,6 @@
       
       <br/>
       <div>
-        
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/connection.cr#L11" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -592,24 +631,6 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/connection.cr#L111" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="id:UUID-instance-method">
-      <div class="signature">
-        
-        def <strong>id</strong> : UUID
-
-        <a class="method-permalink" href="#id%3AUUID-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/connection.cr#L13" target="_blank">View source</a>]
-        
       </div>
     </div>
   
@@ -623,8 +644,6 @@
       
       <br/>
       <div>
-        
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/connection.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -640,8 +659,6 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/connection.cr#L7" target="_blank">View source</a>]
-        
       </div>
     </div>
   
@@ -655,8 +672,6 @@
       
       <br/>
       <div>
-        
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/connection.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -672,23 +687,26 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/connection.cr#L133" target="_blank">View source</a>]
-        
       </div>
     </div>
   
-    <div class="entry-detail" id="receive(message)-instance-method">
+    <div class="entry-detail" id="receive(message:String)-instance-method">
       <div class="signature">
         
-        def <strong>receive</strong>(message)
+        def <strong>receive</strong>(message : String)
 
-        <a class="method-permalink" href="#receive%28message%29-instance-method">#</a>
+        <a class="method-permalink" href="#receive%28message%3AString%29-instance-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>Convert the <code><a href="../Cable/Connection.html#message%28payload%3ACable%3A%3APayload%29-instance-method">#message</a></code> to a proper <code><a href="../Cable/Payload.html">Payload</a></code>.
+The <code><a href="../Cable/Handler.html">Cable::Handler</a></code> will handle catching <code>SerializableError</code>,
+and close the socket and connection</p>
+        </div>
       
       <br/>
       <div>
-        
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/connection.cr#L74" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -704,24 +722,6 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/connection.cr#L125" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="reject_connection!-instance-method">
-      <div class="signature">
-        
-        def <strong>reject_connection!</strong>
-
-        <a class="method-permalink" href="#reject_connection%21-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/connection.cr#L51" target="_blank">View source</a>]
-        
       </div>
     </div>
   
@@ -736,7 +736,19 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/connection.cr#L70" target="_blank">View source</a>]
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="send_message(message:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>send_message</strong>(message : String)
+
+        <a class="method-permalink" href="#send_message%28message%3AString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
         
       </div>
     </div>
@@ -752,8 +764,6 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/connection.cr#L12" target="_blank">View source</a>]
-        
       </div>
     </div>
   
@@ -767,8 +777,6 @@
       
       <br/>
       <div>
-        
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/connection.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -784,23 +792,19 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/connection.cr#L82" target="_blank">View source</a>]
-        
       </div>
     </div>
   
-    <div class="entry-detail" id="token:String?-instance-method">
+    <div class="entry-detail" id="token:String|Nil-instance-method">
       <div class="signature">
         
-        def <strong>token</strong> : String?
+        def <strong>token</strong> : String | Nil
 
-        <a class="method-permalink" href="#token%3AString%3F-instance-method">#</a>
+        <a class="method-permalink" href="#token%3AString%7CNil-instance-method">#</a>
       </div>
       
       <br/>
       <div>
-        
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/connection.cr#L10" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -815,8 +819,6 @@
       
       <br/>
       <div>
-        
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/connection.cr#L117" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -844,8 +846,6 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/connection.cr#L22" target="_blank">View source</a>]
-        
       </div>
     </div>
   
@@ -859,8 +859,6 @@
       
       <br/>
       <div>
-        
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/connection.cr#L30" target="_blank">View source</a>]
         
       </div>
     </div>

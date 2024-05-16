@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.1.1">
-<meta name="crystal_docs.project_version" content="master">
+<meta name="generator" content="Crystal Docs 1.6.2">
+<meta name="crystal_docs.project_version" content="0.3.1">
 <meta name="crystal_docs.project_name" content="cable">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="js/doc.js"></script>
 
   <meta name="repository-name" content="cable">
-  <title>Cable - cable master</title>
+  <title>Cable - cable 0.3.1</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        master
+        0.3.1
       </span>
     </div>
   </div>
@@ -55,6 +55,11 @@
       <a href="Cable.html">Cable</a>
       
         <ul>
+  
+  <li class=" " data-id="cable/Cable/BackendCore" data-name="cable::backendcore">
+      <a href="Cable/BackendCore.html">BackendCore</a>
+      
+    </li>
   
   <li class="parent " data-id="cable/Cable/Channel" data-name="cable::channel">
       <a href="Cable/Channel.html">Channel</a>
@@ -81,8 +86,8 @@
       
         <ul>
   
-  <li class=" " data-id="cable/Cable/Connection/UnathorizedConnectionException" data-name="cable::connection::unathorizedconnectionexception">
-      <a href="Cable/Connection/UnathorizedConnectionException.html">UnathorizedConnectionException</a>
+  <li class=" " data-id="cable/Cable/Connection/UnauthorizedConnectionException" data-name="cable::connection::unauthorizedconnectionexception">
+      <a href="Cable/Connection/UnauthorizedConnectionException.html">UnauthorizedConnectionException</a>
       
     </li>
   
@@ -93,6 +98,11 @@
   
   <li class=" " data-id="cable/Cable/Debug" data-name="cable::debug">
       <a href="Cable/Debug.html">Debug</a>
+      
+    </li>
+  
+  <li class=" " data-id="cable/Cable/DevBackend" data-name="cable::devbackend">
+      <a href="Cable/DevBackend.html">DevBackend</a>
       
     </li>
   
@@ -111,6 +121,16 @@
       
         <ul>
   
+  <li class=" " data-id="cable/Cable/Payload/IdentifierConverter" data-name="cable::payload::identifierconverter">
+      <a href="Cable/Payload/IdentifierConverter.html">IdentifierConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="cable/Cable/Payload/Indentifier" data-name="cable::payload::indentifier">
+      <a href="Cable/Payload/Indentifier.html">Indentifier</a>
+      
+    </li>
+  
   <li class=" " data-id="cable/Cable/Payload/PARAMS" data-name="cable::payload::params">
       <a href="Cable/Payload/PARAMS.html">PARAMS</a>
       
@@ -126,33 +146,33 @@
       
     </li>
   
+  <li class=" " data-id="cable/Cable/RedisBackend" data-name="cable::redisbackend">
+      <a href="Cable/RedisBackend.html">RedisBackend</a>
+      
+    </li>
+  
+  <li class=" " data-id="cable/Cable/RedisPinger" data-name="cable::redispinger">
+      <a href="Cable/RedisPinger.html">RedisPinger</a>
+      
+    </li>
+  
+  <li class=" " data-id="cable/Cable/RemoteConnections" data-name="cable::remoteconnections">
+      <a href="Cable/RemoteConnections.html">RemoteConnections</a>
+      
+    </li>
+  
   <li class=" " data-id="cable/Cable/Server" data-name="cable::server">
       <a href="Cable/Server.html">Server</a>
       
     </li>
   
-  <li class="parent " data-id="cable/Cable/WebsocketPinger" data-name="cable::websocketpinger">
+  <li class=" " data-id="cable/Cable/WebsocketPinger" data-name="cable::websocketpinger">
       <a href="Cable/WebsocketPinger.html">WebsocketPinger</a>
       
-        <ul>
-  
-  <li class=" " data-id="cable/Cable/WebsocketPinger/PingStoppedException" data-name="cable::websocketpinger::pingstoppedexception">
-      <a href="Cable/WebsocketPinger/PingStoppedException.html">PingStoppedException</a>
-      
     </li>
   
 </ul>
 
-      
-    </li>
-  
-</ul>
-
-      
-    </li>
-  
-  <li class=" " data-id="cable/Redis" data-name="redis">
-      <a href="Redis.html">Redis</a>
       
     </li>
   
@@ -223,65 +243,72 @@
   </h2>
   
     
-      <a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable.cr#L7" target="_blank">
-        cable.cr
-      </a>
+      backend/dev/backend.cr
     
     <br/>
   
     
-      <a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/channel.cr#L1" target="_blank">
-        cable/channel.cr
-      </a>
+      backend/redis/backend.cr
     
     <br/>
   
     
-      <a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/connection.cr#L3" target="_blank">
-        cable/connection.cr
-      </a>
+      cable.cr
     
     <br/>
   
     
-      <a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/debug.cr#L3" target="_blank">
-        cable/debug.cr
-      </a>
+      cable/backend_core.cr
     
     <br/>
   
     
-      <a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/handler.cr#L3" target="_blank">
-        cable/handler.cr
-      </a>
+      cable/channel.cr
     
     <br/>
   
     
-      <a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/logger.cr#L3" target="_blank">
-        cable/logger.cr
-      </a>
+      cable/connection.cr
     
     <br/>
   
     
-      <a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/payload.cr#L1" target="_blank">
-        cable/payload.cr
-      </a>
+      cable/debug.cr
     
     <br/>
   
     
-      <a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/server.cr#L4" target="_blank">
-        cable/server.cr
-      </a>
+      cable/handler.cr
     
     <br/>
   
     
-      <a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/websocket_pinger.cr#L3" target="_blank">
-        cable/websocket_pinger.cr
-      </a>
+      cable/logger.cr
+    
+    <br/>
+  
+    
+      cable/payload.cr
+    
+    <br/>
+  
+    
+      cable/redis_pinger.cr
+    
+    <br/>
+  
+    
+      cable/remote_connections.cr
+    
+    <br/>
+  
+    
+      cable/server.cr
+    
+    <br/>
+  
+    
+      cable/websocket_pinger.cr
     
     <br/>
   
@@ -301,12 +328,16 @@
   <dl>
     
       <dt class="entry-const" id="HABITAT_SETTINGS">
-        <strong>HABITAT_SETTINGS</strong> = <code>[{decl: route : <span class="t">String</span> <span class="o">=</span> <span class="t">Cable</span>.message(<span class="n">:default_mount_path</span>), example: <span class="s">&quot;/cable&quot;</span>, validation: <span class="n">nil</span>}, {decl: token : <span class="t">String</span> <span class="o">=</span> <span class="s">&quot;token&quot;</span>, example: <span class="s">&quot;token&quot;</span>, validation: <span class="n">nil</span>}, {decl: url : <span class="t">String</span> <span class="o">=</span> <span class="t">ENV</span>.fetch(<span class="s">&quot;REDIS_URL&quot;</span>, <span class="s">&quot;redis://localhost:6379&quot;</span>), example: <span class="s">&quot;redis://localhost:6379&quot;</span>, validation: <span class="n">nil</span>}, {decl: disable_sec_websocket_protocol_header : <span class="t">Bool</span> <span class="o">=</span> <span class="n">false</span>, example: <span class="n">nil</span>, validation: <span class="n">nil</span>}] <span class="k">of</span> <span class="t">Nil</span></code>
+        <strong>HABITAT_SETTINGS</strong> = <code>[{decl: route : <span class="t">String</span> <span class="o">=</span> <span class="t">Cable</span>.message(<span class="n">:default_mount_path</span>), example: <span class="s">&quot;/cable&quot;</span>, validation: <span class="n">nil</span>}, {decl: token : <span class="t">String</span> <span class="o">=</span> <span class="s">&quot;token&quot;</span>, example: <span class="s">&quot;token&quot;</span>, validation: <span class="n">nil</span>}, {decl: url : <span class="t">String</span> <span class="o">=</span> <span class="t">ENV</span>.fetch(<span class="s">&quot;REDIS_URL&quot;</span>, <span class="s">&quot;redis://localhost:6379&quot;</span>), example: <span class="s">&quot;redis://localhost:6379&quot;</span>, validation: <span class="n">nil</span>}, {decl: disable_sec_websocket_protocol_header : <span class="t">Bool</span> <span class="o">=</span> <span class="n">false</span>, example: <span class="n">nil</span>, validation: <span class="n">nil</span>}, {decl: backend_class : <span class="t">Cable</span><span class="t">::</span><span class="t">BackendCore</span>.<span class="k">class</span> <span class="o">=</span> <span class="t">Cable</span><span class="t">::</span><span class="t">RedisBackend</span>, example: <span class="s">&quot;Cable::RedisBackend&quot;</span>, validation: <span class="n">nil</span>}, {decl: redis_ping_interval : <span class="t">Time</span><span class="t">::</span><span class="t">Span</span> <span class="o">=</span> <span class="n">15</span>.seconds, example: <span class="n">nil</span>, validation: <span class="n">nil</span>}, {decl: restart_error_allowance : <span class="t">Int32</span> <span class="o">=</span> <span class="n">20</span>, example: <span class="n">nil</span>, validation: <span class="n">nil</span>}, {decl: on_error : <span class="t">Proc</span>(<span class="t">Exception</span>, <span class="t">String</span>, <span class="t">Nil</span>) <span class="o">=</span> <span class="o">-&gt;</span>(exception : <span class="t">Exception</span>, message : <span class="t">String</span>) <span class="k">do</span>
+  <span class="t">Cable</span><span class="t">::</span><span class="t">Logger</span>.error(exception: exception) <span class="k">do</span>
+    message
+  <span class="k">end</span>
+<span class="k">end</span>, example: <span class="n">nil</span>, validation: <span class="n">nil</span>}, {decl: pool_redis_publish : <span class="t">Bool</span> <span class="o">=</span> <span class="n">false</span>, example: <span class="n">nil</span>, validation: <span class="n">nil</span>}, {decl: redis_pool_size : <span class="t">Int32</span> <span class="o">=</span> <span class="n">5</span>, example: <span class="n">nil</span>, validation: <span class="n">nil</span>}, {decl: redis_pool_timeout : <span class="t">Float64</span> <span class="o">=</span> <span class="n">5.0</span>, example: <span class="n">nil</span>, validation: <span class="n">nil</span>}] <span class="k">of</span> <span class="t">Nil</span></code>
       </dt>
       
     
       <dt class="entry-const" id="INTERNAL">
-        <strong>INTERNAL</strong> = <code>{message_types: {welcome: <span class="s">&quot;welcome&quot;</span>, disconnect: <span class="s">&quot;disconnect&quot;</span>, ping: <span class="s">&quot;ping&quot;</span>, confirmation: <span class="s">&quot;confirm_subscription&quot;</span>, rejection: <span class="s">&quot;reject_subscription&quot;</span>, unsubscribe: <span class="s">&quot;confirm_unsubscription&quot;</span>}, disconnect_reasons: {unauthorized: <span class="s">&quot;unauthorized&quot;</span>, invalid_request: <span class="s">&quot;invalid_request&quot;</span>, server_restart: <span class="s">&quot;server_restart&quot;</span>}, default_mount_path: <span class="s">&quot;/cable&quot;</span>, protocols: [<span class="s">&quot;actioncable-v1-json&quot;</span>, <span class="s">&quot;actioncable-unsupported&quot;</span>]}</code>
+        <strong>INTERNAL</strong> = <code>{message_types: {welcome: <span class="s">&quot;welcome&quot;</span>, disconnect: <span class="s">&quot;disconnect&quot;</span>, ping: <span class="s">&quot;ping&quot;</span>, confirmation: <span class="s">&quot;confirm_subscription&quot;</span>, rejection: <span class="s">&quot;reject_subscription&quot;</span>, unsubscribe: <span class="s">&quot;confirm_unsubscription&quot;</span>}, channel: <span class="s">&quot;_internal&quot;</span>, disconnect_reasons: {unauthorized: <span class="s">&quot;unauthorized&quot;</span>, invalid_request: <span class="s">&quot;invalid_request&quot;</span>, server_restart: <span class="s">&quot;server_restart&quot;</span>, remote: <span class="s">&quot;remote&quot;</span>}, default_mount_path: <span class="s">&quot;/cable&quot;</span>, protocols: [<span class="s">&quot;actioncable-v1-json&quot;</span>, <span class="s">&quot;actioncable-unsupported&quot;</span>]}</code>
       </dt>
       
     
@@ -316,7 +347,7 @@
       
     
       <dt class="entry-const" id="VERSION">
-        <strong>VERSION</strong> = <code><span class="s">&quot;0.2.0&quot;</span></code>
+        <strong>VERSION</strong> = <code><span class="s">&quot;0.3.1&quot;</span></code>
       </dt>
       
     
@@ -343,6 +374,11 @@
     
       <li class="entry-summary">
         <a href="#message%28event%3ASymbol%29-class-method" class="signature"><strong>.message</strong>(event : Symbol)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reset_server-class-method" class="signature"><strong>.reset_server</strong></a>
         
       </li>
     
@@ -433,8 +469,6 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable.cr#L28" target="_blank">View source</a>]
-        
       </div>
     </div>
   
@@ -449,7 +483,19 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable.cr#L35" target="_blank">View source</a>]
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reset_server-class-method">
+      <div class="signature">
+        
+        def self.<strong>reset_server</strong>
+
+        <a class="method-permalink" href="#reset_server-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
         
       </div>
     </div>
@@ -465,8 +511,6 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/server.cr#L11" target="_blank">View source</a>]
-        
       </div>
     </div>
   
@@ -481,8 +525,6 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable/server.cr#L7" target="_blank">View source</a>]
-        
       </div>
     </div>
   
@@ -496,8 +538,6 @@
       
       <br/>
       <div>
-        
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable.cr#L28" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -524,8 +564,6 @@
       
       <br/>
       <div>
-        
-          [<a href="https://github.com/russ/cable/blob/58b8f6f0061c34979ddb3fef47a91100573dd5ef/src/cable.cr#L28" target="_blank">View source</a>]
         
       </div>
     </div>

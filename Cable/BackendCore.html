@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="cable">
-  <title>Cable::WebsocketPinger - cable 0.3.1</title>
+  <title>Cable::BackendCore - cable 0.3.1</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -56,7 +56,7 @@
       
         <ul>
   
-  <li class=" " data-id="cable/Cable/BackendCore" data-name="cable::backendcore">
+  <li class=" current" data-id="cable/Cable/BackendCore" data-name="cable::backendcore">
       <a href="../Cable/BackendCore.html">BackendCore</a>
       
     </li>
@@ -166,7 +166,7 @@
       
     </li>
   
-  <li class=" current" data-id="cable/Cable/WebsocketPinger" data-name="cable::websocketpinger">
+  <li class=" " data-id="cable/Cable/WebsocketPinger" data-name="cable::websocketpinger">
       <a href="../Cable/WebsocketPinger.html">WebsocketPinger</a>
       
     </li>
@@ -185,12 +185,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Cable::WebsocketPinger
+  <span class="kind">abstract class</span> Cable::BackendCore
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Cable/WebsocketPinger.html">Cable::WebsocketPinger</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Cable/BackendCore.html">Cable::BackendCore</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -202,6 +202,22 @@
 
 
 
+
+  <h2>
+    <a id="direct-known-subclasses" class="anchor" href="#direct-known-subclasses">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Direct Known Subclasses
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type"><a href="../Cable/DevBackend.html">Cable::DevBackend</a></li>
+    
+      <li class="other-type"><a href="../Cable/RedisBackend.html">Cable::RedisBackend</a></li>
+    
+  </ul>
 
 
 
@@ -218,7 +234,7 @@
   </h2>
   
     
-      cable/websocket_pinger.cr
+      cable/backend_core.cr
     
     <br/>
   
@@ -227,51 +243,7 @@
 
 
 
-  <h2>
-    <a id="constructors" class="anchor" href="#constructors">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Constructors
-  </h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#new%28socket%3AHTTP%3A%3AWebSocket%29-class-method" class="signature"><strong>.new</strong>(socket : HTTP::WebSocket)</a>
-        
-      </li>
-    
-  </ul>
 
-
-
-  <h2>
-    <a id="class-method-summary" class="anchor" href="#class-method-summary">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Class Method Summary
-  </h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#build%28socket%3AHTTP%3A%3AWebSocket%29-class-method" class="signature"><strong>.build</strong>(socket : HTTP::WebSocket)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#run_every%28value%3AInt32%7CFloat64%2C%26%29-class-method" class="signature"><strong>.run_every</strong>(value : Int32 | Float64, &)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#seconds-class-method" class="signature"><strong>.seconds</strong></a>
-        
-      </li>
-    
-  </ul>
 
 
 
@@ -286,7 +258,60 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#stop%3ANil-instance-method" class="signature"><strong>#stop</strong> : Nil</a>
+        <a href="#close_publish_connection-instance-method" class="signature"><strong>#close_publish_connection</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#close_subscribe_connection-instance-method" class="signature"><strong>#close_subscribe_connection</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#open_subscribe_connection%28channel%29-instance-method" class="signature"><strong>#open_subscribe_connection</strong>(channel)</a>
+        
+          <div class="summary"><p>internal pub/sub</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ping_redis_publish-instance-method" class="signature"><strong>#ping_redis_publish</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ping_redis_subscribe-instance-method" class="signature"><strong>#ping_redis_subscribe</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#publish_connection-instance-method" class="signature"><strong>#publish_connection</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#publish_message%28stream_identifier%3AString%2Cmessage%3AString%29-instance-method" class="signature"><strong>#publish_message</strong>(stream_identifier : String, message : String)</a>
+        
+          <div class="summary"><p>external pub/sub</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subscribe%28stream_identifier%3AString%29-instance-method" class="signature"><strong>#subscribe</strong>(stream_identifier : String)</a>
+        
+          <div class="summary"><p>channel management</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subscribe_connection-instance-method" class="signature"><strong>#subscribe_connection</strong></a>
+        
+          <div class="summary"><p>connection management</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unsubscribe%28stream_identifier%3AString%29-instance-method" class="signature"><strong>#unsubscribe</strong>(stream_identifier : String)</a>
         
       </li>
     
@@ -321,83 +346,7 @@
 </div>
 
 
-  <h2>
-    <a id="constructor-detail" class="anchor" href="#constructor-detail">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Constructor Detail
-  </h2>
-  
-    <div class="entry-detail" id="new(socket:HTTP::WebSocket)-class-method">
-      <div class="signature">
-        
-        def self.<strong>new</strong>(socket : HTTP::WebSocket)
 
-        <a class="method-permalink" href="#new%28socket%3AHTTP%3A%3AWebSocket%29-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-
-
-
-  <h2>
-    <a id="class-method-detail" class="anchor" href="#class-method-detail">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Class Method Detail
-  </h2>
-  
-    <div class="entry-detail" id="build(socket:HTTP::WebSocket)-class-method">
-      <div class="signature">
-        
-        def self.<strong>build</strong>(socket : HTTP::WebSocket)
-
-        <a class="method-permalink" href="#build%28socket%3AHTTP%3A%3AWebSocket%29-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="run_every(value:Int32|Float64,&amp;)-class-method">
-      <div class="signature">
-        
-        def self.<strong>run_every</strong>(value : Int32 | Float64, &)
-
-        <a class="method-permalink" href="#run_every%28value%3AInt32%7CFloat64%2C%26%29-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="seconds-class-method">
-      <div class="signature">
-        
-        def self.<strong>seconds</strong>
-
-        <a class="method-permalink" href="#seconds-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
 
 
 
@@ -410,12 +359,158 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="stop:Nil-instance-method">
+    <div class="entry-detail" id="close_publish_connection-instance-method">
       <div class="signature">
-        
-        def <strong>stop</strong> : Nil
+        abstract 
+        def <strong>close_publish_connection</strong>
 
-        <a class="method-permalink" href="#stop%3ANil-instance-method">#</a>
+        <a class="method-permalink" href="#close_publish_connection-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="close_subscribe_connection-instance-method">
+      <div class="signature">
+        abstract 
+        def <strong>close_subscribe_connection</strong>
+
+        <a class="method-permalink" href="#close_subscribe_connection-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="open_subscribe_connection(channel)-instance-method">
+      <div class="signature">
+        abstract 
+        def <strong>open_subscribe_connection</strong>(channel)
+
+        <a class="method-permalink" href="#open_subscribe_connection%28channel%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>internal pub/sub</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ping_redis_publish-instance-method">
+      <div class="signature">
+        abstract 
+        def <strong>ping_redis_publish</strong>
+
+        <a class="method-permalink" href="#ping_redis_publish-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ping_redis_subscribe-instance-method">
+      <div class="signature">
+        abstract 
+        def <strong>ping_redis_subscribe</strong>
+
+        <a class="method-permalink" href="#ping_redis_subscribe-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="publish_connection-instance-method">
+      <div class="signature">
+        abstract 
+        def <strong>publish_connection</strong>
+
+        <a class="method-permalink" href="#publish_connection-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="publish_message(stream_identifier:String,message:String)-instance-method">
+      <div class="signature">
+        abstract 
+        def <strong>publish_message</strong>(stream_identifier : String, message : String)
+
+        <a class="method-permalink" href="#publish_message%28stream_identifier%3AString%2Cmessage%3AString%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>external pub/sub</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subscribe(stream_identifier:String)-instance-method">
+      <div class="signature">
+        abstract 
+        def <strong>subscribe</strong>(stream_identifier : String)
+
+        <a class="method-permalink" href="#subscribe%28stream_identifier%3AString%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>channel management</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subscribe_connection-instance-method">
+      <div class="signature">
+        abstract 
+        def <strong>subscribe_connection</strong>
+
+        <a class="method-permalink" href="#subscribe_connection-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>connection management</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unsubscribe(stream_identifier:String)-instance-method">
+      <div class="signature">
+        abstract 
+        def <strong>unsubscribe</strong>(stream_identifier : String)
+
+        <a class="method-permalink" href="#unsubscribe%28stream_identifier%3AString%29-instance-method">#</a>
       </div>
       
       <br/>
