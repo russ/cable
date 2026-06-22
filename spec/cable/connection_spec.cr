@@ -4,11 +4,26 @@ include RequestHelpers
 
 describe Cable::Connection do
   describe "#close" do
-    it "closes the connection socket even without channel subscriptions" do
-      connect do |connection, _socket|
+    # Also a regression test for #109: a connection subscribes to its internal
+    # channel during initialize even when it never subscribes to a user channel,
+    # so #close must always tear that subscription back down or it leaks on the
+    # backend. We use a Connection subclass that records the internal-channel
+    # hook calls (while still delegating to the real backend via super), and
+    # fold the assertions into this existing example rather than adding a new one.
+    it "closes the connection socket and tears down the internal channel even without channel subscriptions" do
+      connect(connection_class: InternalChannelSpyConnection) do |connection, _socket|
+        spy = connection.as(InternalChannelSpyConnection)
+
+        # initialize subscribed to the internal channel, even with no user channels
+        spy.internal_subscribes.should eq(["cable_internal/98"])
+        spy.internal_unsubscribes.should be_empty
+
         connection.closed?.should eq(false)
         connection.close
         connection.closed?.should eq(true)
+
+        # close must tear that subscription down to avoid leaking it on the backend
+        spy.internal_unsubscribes.should eq(["cable_internal/98"])
       end
     end
     it "removes the connection channel on close" do
@@ -601,6 +616,34 @@ end
 private class UnauthorizedConnectionTest < Cable::Connection
   def connect
     reject_unauthorized_connection
+  end
+end
+
+# Records calls to the internal-channel hooks (while still delegating to the
+# real backend via `super`) so #close's teardown can be asserted directly.
+private class InternalChannelSpyConnection < Cable::Connection
+  identified_by :identifier
+
+  getter internal_subscribes = [] of String
+  getter internal_unsubscribes = [] of String
+
+  def connect
+    if tk = token
+      self.identifier = tk
+    end
+  end
+
+  def broadcast_to(channel, message)
+  end
+
+  private def subscribe_to_internal_channel
+    internal_subscribes << internal_channel
+    super
+  end
+
+  private def unsubscribe_from_internal_channel
+    internal_unsubscribes << internal_channel
+    super
   end
 end
 
